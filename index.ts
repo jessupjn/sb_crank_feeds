@@ -1,15 +1,14 @@
 import { web3 } from "@coral-xyz/anchor";
 import { AnchorUtils, asV0Tx, PullFeed } from "@switchboard-xyz/on-demand";
+
 const feeds = [
-  new web3.PublicKey("DHB2Ph8CK7PmR3xswqcmDkgQeucnwSZtfnMpnc7mQgkb"), // USDC / USD
-  new web3.PublicKey("BwBLNEuTnqQVhzgx3557szSgz1PEHEvj2RRoPiFWR8YB"), // USD_BRL
-  new web3.PublicKey("4Ascib8aKSXcagQprVocLgwtxha4ksByxatR6hsjN8ve"), // Binance ETHBTC
+  new web3.PublicKey("6USvryJSNcdZUH1REsaKZwDWTKL5FwcPbE8q3EWZgjZX"), // pump SOL/USDC LP token
 ];
 
 (async () => {
   const sbProgram = await AnchorUtils.loadProgramFromConnection(
     new web3.Connection(
-      process.env.DEVNET_RPC_URL || web3.clusterApiUrl("devnet")
+      process.env.MAINNET_RPC_URL || web3.clusterApiUrl("mainnet-beta")
     )
   );
   console.log();
@@ -20,9 +19,10 @@ const feeds = [
     {
       feeds: feeds,
       chain: "solana",
-      network: "devnet",
+      network: "mainnet-beta",
       numSignatures: 2,
-    }
+    },
+    true
   );
   console.log();
   console.log("Retrieved response from oracles:");
