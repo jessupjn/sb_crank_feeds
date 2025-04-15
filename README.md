@@ -12,11 +12,6 @@ Example output:
 ```
 ❯ bun run index.ts
 
-Loaded Switchboard Program: Aio4gaXjXzJNVLtzwtNVmSqGKpANtXhybbkhtAC94ji2
-
-Retrieved response from oracles:
-❯ bun run index.ts
-
 Loaded Switchboard Program: SBondMDrcV3K4kxZR1HNVT7osZxAHVHgYXL5Ze1oMUv
 Using queue A43DyUGA7s8eXPxqEjJY6EBu1KKbNgfxF8h17VAHn13w
 
