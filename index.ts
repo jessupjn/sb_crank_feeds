@@ -35,8 +35,8 @@ const feeds = [
       lookupTables: luts,
       computeUnitLimitMultiple: 1.25,
       computeUnitPrice: 100_000,
+      // TODO: update this field to your signer wallet's public key.
       payer: new web3.PublicKey("nXsE22JSmWYk7f4KtfjXVqCvGuaVXntdSbCKzdumzFv"),
-      // payer: web3.PublicKey; TODO: add this or the anchor provider's wallet will be used.
     });
 
     const numInstructions = tx.message.compiledInstructions.length;
