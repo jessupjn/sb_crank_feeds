@@ -1,0 +1,16 @@
+{
+  "name": "sb_crank_feeds",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.0",
+    "@switchboard-xyz/on-demand": "^2.4.1"
+  }
+}
