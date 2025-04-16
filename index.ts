@@ -2,7 +2,7 @@ import { web3 } from "@coral-xyz/anchor";
 import { AnchorUtils, asV0Tx, PullFeed } from "@switchboard-xyz/on-demand";
 
 const feeds = [
-  new web3.PublicKey("6USvryJSNcdZUH1REsaKZwDWTKL5FwcPbE8q3EWZgjZX"), // pump SOL/USDC LP token
+  new web3.PublicKey("4ieXFeAqWwLaySNYqS8uGgpUCdhWUVjXRFWPE6dmZNBU"),
 ];
 
 (async () => {
@@ -14,6 +14,9 @@ const feeds = [
   console.log();
   console.log("Loaded Switchboard Program:", sbProgram.programId.toBase58());
 
+  console.log();
+  console.log("Fetching update for feeds: ", JSON.stringify(feeds, null, 2));
+
   const [instructions, luts, rawResponse] = await PullFeed.fetchUpdateManyIx(
     sbProgram,
     {
@@ -21,8 +24,7 @@ const feeds = [
       chain: "solana",
       network: "mainnet-beta",
       numSignatures: 2,
-    },
-    true
+    }
   );
   console.log();
   console.log("Retrieved response from oracles:");
